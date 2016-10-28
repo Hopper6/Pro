@@ -46,9 +46,19 @@ pie.setOption({
            {
                name: '视频广告',
                value: 236,
-               selected: true,
+               // selected: true,
                itemStyle: {
-                   color: 'red'
+                   normal: {
+                       color: 'red',
+                       borderColor: 'black',
+                       borderWidth: 1,
+                       borderType: 'dotted',
+                       shadowColor: 'rgba(128, 0, 0, 0.5)',
+                       shadowBlur: 10
+                   },
+                   emphasis: {
+                       color: 'rgba(128, 128, 128, 0.5)'
+                   }
                }
            }
        ]
