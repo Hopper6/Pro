@@ -80,6 +80,13 @@ pie.setOption({
                 // show: false
             }
         },
+        labelLine: {
+            normal: {
+                lineStyle: {
+                    color: 'white'
+                }
+            }
+        },
         roseType: 'angle'
     }]
 });
