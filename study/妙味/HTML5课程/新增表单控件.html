@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增表单控件</title>
+    <link rel="shortcut icon" href="../../images/mvLearn.ico">
+</head>
+<body>
+<form>
+    <!-- email -->
+    <input type="email">
+    <input type="submit">
+    <!-- tel:在pc端不会有多大的变化，在移动端会是键盘切换 -->
+
+    <!-- url: 和email的效果差不多 -->
+    <input type="url">
+    <input type="submit">
+    
+    <!-- search: 输入框后边多了一个叉，点击会清空输入框的内容 -->
+    <input type="search">
+    <input type="submit">
+
+    <!-- range:数值选择器。step:每次移动的步数，min:开始的位置，max:结束的位置,value:游标所在的位置 -->
+    <input type="range" step="2" min="0" max="10" value="5">
+    <input type="submit">
+    
+    <!-- number -->
+    <input type="number" value="20">
+    <input type="submit">
+    
+    <!-- color -->
+    <input type="color">
+    
+    <!-- 时间日期控件 -->
+    <!-- datetime -->
+    <input type="date">      <!-- datetime控件很多浏览器都不兼容，最好使用date控件。要想做一个兼容所有浏览器的时间空间最好是使用第三方控件 -->
+    <input type="time">
+    <input type="week">
+</form>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getElementsByClassName</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var aLi = getElementsByClassName(document, 'li', 'li');
+            for (var i = 0; i<aLi.length; i++) {
+                aLi[i].style.background = 'yellow';
+            }
+            alert(aLi.length);
+            console.log(aLi);    //在浏览器控制面板中输出
+            function getElementsByClassName(parent, tagName, className) {   //parent: 元素父级， tagName: 元素， className: 元素的class
+                var aEls = parent.getElementsByTagName(tagName);
+                var arr = [];
+                for (var i = 0; i<aEls.length; i++) {
+//                    if (aEls[i].className == 'li') {
+//                        arr.push(aEls[i]);
+//                    }
+                    /* 以下方法是考虑元素可能有多个class */
+                    var aClassName = aEls[i].className.split(' ');  //split方法：将字符串转化为字符串数组
+                    for (var j = 0; j<aClassName.length; j++) {
+                        if (aClassName[j] == className) {
+                            arr.push(aEls[i]);
+                            break;  //跳出当前的循环，执行外层循环，考虑手误导致元素输入重复的class
+                        }
+                    }
+                }
+                return arr;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <ul id="ul">
+            <li>11111</li>
+            <li class="li li">22222</li>
+            <li>33333</li>
+            <li class="li li1">44444</li>
+            <li>55555</li>
+        </ul>
+    </div>
+</body>
+</html>

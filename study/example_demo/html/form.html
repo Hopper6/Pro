@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+    <script type="text/javascript">
+        window.onload = function () {
+//            var oForm = document.getElementById('form1');
+            //获取表单的一个元素方法： 表单.元素name
+//            document.onclick = function () {
+//                alert(oForm.username.value);
+//            }
+//            onchange:当值发生改变的时候被触发
+//            input的type为text时调用onchange时间：当光标离开元素的时候再判断值是否发生了改变，如果发生改变则触发
+            var oForm2 = document.getElementById('form2');
+            var oBtn = document.getElementById('btn');
+            oBtn.onclick = function () {
+                for (var i=0; i<oForm2.sex.length; i++) {
+                    console.log(oForm2.sex[i].value);
+                }
+                for (var i=0; i<oForm2.aihao.length; i++) {
+                    if (oForm2.aihao[i].checked) {
+                        alert(oForm2.aihao[i].value + '是被选中了的');
+                    } else {
+                        alert(oForm2.aihao[i].value + '是非被选中了的');
+                    }
+                }
+            }
+            oForm2.city.onchange = function () {
+                alert(this.value);
+            }
+        }
+    </script>
+</head>
+<body>
+    <form id="form1">
+        <input type="text" id="text1" name="username">
+    </form>
+    <form id="form2">
+        <input type="radio" name="sex" value="男" checked>男
+        <input type="radio" name="sex" value="女">女
+
+        <input type="checkbox" name="aihao" value="电影">电影
+        <input type="checkbox" name="aihao" value="音乐">音乐
+        <input type="checkbox" name="aihao" value="体育">体育
+
+        <select name="city">
+            <option>请选择一个城市</option>
+            <option value="北京">北京</option>
+            <option value="上海">上海</option>
+            <option value="广州" selected>广州</option>
+            <option value="深圳">深圳</option>
+        </select>
+
+        <input type="button" value="按钮" id="btn">
+        <input type="button" value="提交">
+    </form>
+</body>
+</html>

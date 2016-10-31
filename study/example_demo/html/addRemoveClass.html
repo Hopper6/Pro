@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>添加/移除class</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        window.onload = function () {
+            //添加class
+            var oDiv1 = document.getElementById('div1');
+            var oDiv2 = document.getElementById('div2');
+            addClass(oDiv1,'box1');
+            removeClass(oDiv2,'box2');
+
+            //添加class
+            function addClass(obj,className) {
+                //如果原来没有class
+                if (obj.className == '') {
+                    obj.className  = className;
+                } else {
+                //如果原来有class
+                    var arrClass = obj.className.split(' ');
+                    var _index = arrIndexOf(arrClass,className);
+                    //如果添加的class在原来的class中不存在
+                    if (_index == -1) {
+                        obj.className += ' ' + className;
+                    }
+                    //如果添加的class在原来的class中存在
+                }
+            }
+
+            //移除class
+            function removeClass(obj,className) {
+                //如果原来存在class
+                if (obj.className != '') {
+                    //如果移除的class在原来的class中存在
+                    var arrClass = obj.className.split(' ');
+                    var _index = arrIndexOf(arrClass,className);
+                    if (_index != -1) {
+                        arrClass.splice(_index,1);
+                        obj.className = arrClass;
+                    }
+                }
+                //如果原来不存在class
+            }
+
+            function arrIndexOf(arr,v) {
+                for (var i=0; i<arr.length; i++) {
+                    if (arr[i] == v) {
+                        return i;
+                    }
+                }
+                return -1;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1" class="box">添加class</div>
+    <div id="div2" class="box2">移除class</div>
+</body>
+</html>
