@@ -38,7 +38,7 @@ eStat.setOption({
     calculable: true,
     xAxis: {
         type: 'category',
-        data: ['花都', '海珠', '番禺', '从化', '白云', '增城']
+        data: ['花都 ', '海珠', '番禺', '从化', '白云', '增城']
     },
     yAxis: {
         type: 'value'
