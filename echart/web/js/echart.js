@@ -16,7 +16,7 @@ eStat.setOption({
         show : true,
         orient: 'vertical',
         feature : {
-            magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+            magicType : {show: true, type: ['line', 'stack']},
             restore : {show: true},
             saveAsImage : {show: true}
         }
@@ -76,7 +76,7 @@ sign.setOption({
         show : true,
         orient: 'vertical',
         feature : {
-            magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+            magicType : {show: true, type: ['line', 'bar', 'stack']},
             restore : {show: true},
             saveAsImage : {show: true}
         }
