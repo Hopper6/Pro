@@ -1,13 +1,17 @@
 /**
- * Created by hopper on 2016/10/31.
- */
+* echarts高度自适应配置
+* */
+var eWrap = document.getElementsByClassName('e_wrap');
+H = window.innerHeight * 0.46 + 'px';
+for (var i=0; i<eWrap.length; i++) {
+    eWrap[i].style.height = H;
+}
 
 /**
  * 现场检查统计
  * */
 var eStat = echarts.init(document.getElementById('stat'));
 eStat.setOption({
-    // backgroundColor: 'rgba(20,168,200,0)',
     tooltip: {
         trigger: 'axis',
     },
@@ -16,12 +20,12 @@ eStat.setOption({
         fontFamily: '微软雅黑'
     },
     toolbox: {
-        show : true,
+        show: true,
         orient: 'vertical',
-        feature : {
-            magicType : {show: true, type: ['line', 'stack']},
-            restore : {show: true},
-            saveAsImage : {show: true}
+        feature: {
+            magicType: {show: true, type: ['line', 'stack']},
+            restore: {show: true},
+            saveAsImage: {show: true}
         }
     },
     legend: {
@@ -31,7 +35,7 @@ eStat.setOption({
             fontFamily: '微软雅黑'
         }
     },
-    calculable : true,
+    calculable: true,
     xAxis: {
         type: 'category',
         data: ['花都', '海珠', '番禺', '从化', '白云', '增城']
@@ -69,7 +73,7 @@ sign.setOption({
         color: '#00DEFF',
         fontFamily: '微软雅黑'
     },
-    calculable : true,
+    calculable: true,
     legend: {
         data: ['施工签到率', '施工签到率1'],
         textStyle: {
@@ -78,12 +82,12 @@ sign.setOption({
         }
     },
     toolbox: {
-        show : true,
+        show: true,
         orient: 'vertical',
-        feature : {
-            magicType : {show: true, type: ['line', 'bar', 'stack']},
-            restore : {show: true},
-            saveAsImage : {show: true}
+        feature: {
+            magicType: {show: true, type: ['line', 'bar', 'stack']},
+            restore: {show: true},
+            saveAsImage: {show: true}
         }
     },
     xAxis: {
@@ -130,10 +134,10 @@ eProgress.setOption({
         top: -4
     },
     toolbox: {
-        show : true,
+        show: true,
         orient: 'vertical',
-        feature : {
-            saveAsImage : {show: true}
+        feature: {
+            saveAsImage: {show: true}
         },
         top: 20
     },
@@ -163,7 +167,7 @@ eBug.setOption({
         color: '#00DEFF',
         fontFamily: '微软雅黑'
     },
-    calculable : true,
+    calculable: true,
     series: [{
         name: '计划完成率',
         type: 'pie',
@@ -178,3 +182,8 @@ eBug.setOption({
         ]
     }]
 });
+
+// var eCharts = document.getElementsByClassName('echarts');debugger
+// for(var i=0;i<eCharts.length;i++){
+//     eCharts[i].style.height = window.innerHeight + 'px';
+// }
