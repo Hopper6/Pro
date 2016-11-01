@@ -8,6 +8,9 @@
 var eStat = echarts.init(document.getElementById('stat'));
 eStat.setOption({
     // backgroundColor: 'rgba(20,168,200,0)',
+    tooltip: {
+        trigger: 'axis',
+    },
     textStyle: {
         color: '#00DEFF',
         fontFamily: '微软雅黑'
@@ -31,7 +34,7 @@ eStat.setOption({
     calculable : true,
     xAxis: {
         type: 'category',
-        data: ['花都供电局', '海珠供电局', '番禺供电局', '从化供电局', '白云供电局', '增城供电局']
+        data: ['花都', '海珠', '番禺', '从化', '白云', '增城']
     },
     yAxis: {
         type: 'value'
@@ -59,7 +62,9 @@ eStat.setOption({
  * */
 var sign = echarts.init(document.getElementById('sign'));
 sign.setOption({
-    // backgroundColor: 'rgba(20,168,200,0.3)',
+    tooltip: {
+        trigger: 'axis',
+    },
     textStyle: {
         color: '#00DEFF',
         fontFamily: '微软雅黑'
@@ -109,16 +114,9 @@ sign.setOption({
  * */
 var eProgress = echarts.init(document.getElementById('progress'));
 eProgress.setOption({
-    // title: {
-    //     text: '区局进度计划完成率',
-    //     subText: '数据虚构',
-    //     x: 'center',
-    //     textStyle: {
-    //         color: '#00DEFF',
-    //         fontFamily: '微软雅黑'
-    //     }
-    // },
-    // backgroundColor: 'rgba(20,168,200,0.3)',
+    tooltip: {
+        trigger: 'item',
+    },
     textStyle: {
         color: '#00DEFF',
         fontFamily: '微软雅黑'
@@ -129,8 +127,7 @@ eProgress.setOption({
             color: '#00DEFF',
             fontFamily: '微软雅黑'
         },
-        top: -2,
-        itemWidth: 14,
+        top: -4
     },
     toolbox: {
         show : true,
@@ -143,7 +140,7 @@ eProgress.setOption({
     series: [{
         name: '计划完成率',
         type: 'pie',
-        center: ['46%', '61%'],
+        center: ['50%', '61%'],
         data: [
             {name: '花都供电局', value: 20},
             {name: '海珠供电局', value: 35},
@@ -159,7 +156,9 @@ eProgress.setOption({
  * */
 var eBug = echarts.init(document.getElementById('bugNum'));
 eBug.setOption({
-    // backgroundColor: 'rgba(20,168,200,0.3)',
+    tooltip: {
+        trigger: 'item',
+    },
     textStyle: {
         color: '#00DEFF',
         fontFamily: '微软雅黑'
